@@ -1,0 +1,50 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.d-flex{
+    display: flex;
+}
+
+.home-page{
+    flex: 7;
+    background-image: url(https://images.pexels.com/photos/2387873/pexels-photo-2387873.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size:contain;
+    background-color:black;
+}
+
+.text {
+    flex: 3;
+    background-color:black;
+    width: auto;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.text-div{
+    /* display: flex; */
+    /* flex-direction: column;  */
+   
+    /* border: 2px solid gray; */
+    margin-left: 20px;
+}
+.welcome-msg{
+    font-size: x-large;
+    font-weight: bolder;
+}
+.hook-line{
+    font-size:smaller;
+    margin-top: 20px;
+}
+.second-line{
+ color: greenyellow;
+}
+.home-page-button{
+    margin-top: 20px;
+}

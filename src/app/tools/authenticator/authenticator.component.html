@@ -1,0 +1,40 @@
+<div id="authenticator">
+    <mat-card id="authenticator-conten">
+        <mat-card-header>
+            <mat-card-title>{{getState()}}</mat-card-title>
+        </mat-card-header>
+        <div *ngIf="isLoginState()" [formGroup]="loginForm">
+            <input type="email" placeholder="Email"  formControlName="email">
+            <input type="password" placeholder="Password"  formControlName="password">
+            <button mat-flat-button color="warn" (click)="onLoginClick()"
+            [disabled]="loginForm.invalid"
+            >Login</button>
+        </div>
+        <div *ngIf="isRegisterState()">
+            <form [formGroup]="registrationForm">
+            <input #registerEmail  type="email" placeholder="Email" formControlName="email">
+            <input #registerPassword type="password"  placeholder="Password" formControlName="password">
+            <input #registerConfirmPassword type="password"  placeholder="Confirm Password" formControlName="confirmPassword">
+            <button mat-flat-button color="warn" 
+            (click)="onRegisterClick()"
+            [disabled]="registrationForm.invalid && !isRegistrationFormValid()"
+            >Create</button>
+            </form>
+        </div>
+        <div *ngIf="isForgotPasswordState()">
+            <form [formGroup]="forgotPasswordForm">
+                
+                <input type="email" placeholder="Email" formControlName="email">
+                <button mat-flat-button color="warn" (click)="onResetPasswordClick()"
+                [disabled]="forgotPasswordForm.invalid"
+                >Reset</button>
+            </form>
+        </div>
+        <mat-card-actions align="end">
+            <button mat-flat-button (click)="onForgotPasswordButtonClick()">Forgot Password</button>
+            <button mat-flat-button (click)="onCreateAcountButtonClick()">Create Account</button>
+            <button mat-flat-button (click)="onLoginButtonClick()">Login</button>
+        </mat-card-actions>
+    </mat-card>
+</div>
+
